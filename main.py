@@ -14,7 +14,7 @@ st.markdown(
 
 # load dataset -------------------------------------------------------------------
 # split dataset menjadi data training dan data testing ---------------------------
-dataset_baru = pd.read_excel('c:/KULIAH/KULIAH SEMESTER 5/Proyek Saint Data (PSD)/penugasan/dataset_baru.xlsx')
+dataset_baru = pd.read_excel('dataset_baru.xlsx')
 
 # memisahkan kolom fitur dan target
 fitur = dataset_baru.drop(columns=['Classification'], axis=1)
@@ -25,7 +25,7 @@ fitur_train, fitur_test, target_train, target_test = train_test_split(fitur, tar
 
 # normalisasi dataset ------------------------------------------------------------
 
-with open('c:/KULIAH/KULIAH SEMESTER 5/Proyek Saint Data (PSD)/penugasan/zscorescaler_baru.pkl', 'rb') as file_normalisasi:
+with open('zscorescaler_baru.pkl', 'rb') as file_normalisasi:
     zscore_scaler = pickle.load(file_normalisasi)
     
 # menerapkan normalisasi zscore pada data training
@@ -35,7 +35,7 @@ zscore_training = zscore_scaler.transform(fitur_train)
 zscore_testing = zscore_scaler.transform(fitur_test)
 
 # implementasi data pda model
-with open('c:/KULIAH/KULIAH SEMESTER 5/Proyek Saint Data (PSD)/penugasan/gridrandomforestzscore.pkl', 'rb') as file_model:
+with open('gridrandomforestzscore.pkl', 'rb') as file_model:
     model_rf = pickle.load(file_model)
     
 model_rf.fit(zscore_training, target_train)
