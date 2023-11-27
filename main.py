@@ -14,7 +14,7 @@ st.markdown(
 
 # load dataset -------------------------------------------------------------------
 # split dataset menjadi data training dan data testing ---------------------------
-dataset_baru = pd.read_excel('dataset_baru.xlsx')
+dataset_baru = pd.read_csv('dataset_baru.csv')
 
 # memisahkan kolom fitur dan target
 fitur = dataset_baru.drop(columns=['Classification'], axis=1)
