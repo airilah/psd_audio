@@ -46,21 +46,21 @@ st.warning("Masukkan hasil test Anda!")
 Age = st.number_input ('Input Umur Anda! ')
 Glucose = st.number_input ('Input hasil test Glukosa Anda!')
 Homa = st.number_input ('Input hasil test Homa Anda!')
-Leptin = st.number_input ('Input hasil test Leptin Anda!')
+Adiponectin = st.number_input ('Input hasil test Adiponectin Anda!')
 Resistin = st.number_input ('Input hasil test Resistin Anda!')
 
 
 if st.button('Cek Status'):
-    if Age is not None and Glucose is not None and Homa is not None and Leptin is not None and Resistin is not None:
+    if Age is not None and Glucose is not None and Homa is not None and Adiponectin is not None and Resistin is not None:
         
         Age = int(Age)
         Glucose = float(Glucose)
         Homa = float(Homa)
-        Leptin = float(Leptin)
+        Adiponectin = float(Adiponectin)
         Resistin = float(Resistin)
         
         # Prediksi berdasarkan input yang telah diubah menjadi numerik
-        prediksi = model_rf.predict([[Age, Glucose, Homa, Leptin, Resistin]])
+        prediksi = model_rf.predict([[Age, Glucose, Homa, Adiponectin, Resistin]])
         st.text( prediksi[0])
         if prediksi[0] == 1:
             st.success("Anda diprediksi Kanker Jinak / belum terdiagnosis Kanker Payudara!")
