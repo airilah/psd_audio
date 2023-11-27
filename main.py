@@ -21,6 +21,7 @@ dataset_baru = pd.read_csv('dataset_baru.csv')
 fitur = dataset_baru.drop(columns=['Classification'], axis=1)
 target = dataset_baru['Classification']
 
+
 # melakukan pembagian dataset, dataset dibagi menjadi 80% data training dan 20% data testing
 fitur_train, fitur_test, target_train, target_test = train_test_split(fitur, target, test_size = 0.2, random_state=42)
 
@@ -64,11 +65,8 @@ if st.button('Cek Status'):
         st.text( prediksi[0])
         if prediksi[0] == 1:
             st.success("Anda diprediksi Kanker Jinak / belum terdiagnosis Kanker Payudara!")
-        if prediksi[0] == 2:
-            st.error("Anda diprediksi Kanker Ganas / terdiagnosis Kanker Payudara")
         else:
-            st.error("Zonk")
+            st.error("Anda diprediksi Kanker Ganas / terdiagnosis Kanker Payudara")
     else:
         st.text('Data tidak boleh kosong. Harap isi semua kolom.')
-
 
