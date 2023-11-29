@@ -1,6 +1,7 @@
-import joblib
+import pickle
 import pandas as pd
 import streamlit as st
+import numpy as np
 from sklearn.model_selection import train_test_split
 st.markdown(
     "<h1 style='text-align: center;'>Klasifikasi Kanker Payudara Menggunakan Model Random Forest</h1>", unsafe_allow_html=True
@@ -23,7 +24,7 @@ fitur_train, fitur_test, target_train, target_test = train_test_split(fitur, tar
 # normalisasi dataset ------------------------------------------------------------
 
 with open('zscorescaler_baru.pkl', 'rb') as file_normalisasi:
-    zscore_scaler = joblib.load(file_normalisasi)
+    zscore_scaler = pickle.load(file_normalisasi)
     
 # menerapkan normalisasi zscore pada data training
 zscore_training = zscore_scaler.transform(fitur_train)
@@ -34,7 +35,7 @@ zscore_testing = zscore_scaler.transform(fitur_test)
 # implementasi data pda model
 
 with open('gridrandomforestzscore.pkl', 'rb') as file_model:
-    model_rf = joblib.load(file_model)
+    model_rf = pickle.load(file_model)
     
 model_rf.fit(zscore_training, target_train)
 
