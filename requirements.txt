@@ -85,3 +85,4 @@ zipp==3.17.0
 librosa==0.10.1
 seaborn==0.13.0
 pip==23.3.1
+joblib==1.2.0
