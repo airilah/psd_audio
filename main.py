@@ -160,10 +160,10 @@ if selected == "Prediksi Audio":
 
 
                 # Load the model and hyperparameters
-                with open('/content/drive/MyDrive/ProyekSaintData/Pertemuan4/gridsearchknnzscoremodel.pkl', 'rb') as model_file:
+                with open('gridsearchknnzscoremodel.pkl', 'rb') as model_file:
                     saved_data = pickle.load(model_file)
 
-                df = pd.read_csv('/content/drive/MyDrive/ProyekSaintData/Pertemuan4/Anas_hasil_statistik_pertemuan4.csv')
+                df = pd.read_csv('Anas_hasil_statistik_pertemuan4.csv')
 
                 # Memisahkan kolom target (label) dari kolom fitur
                 X = df.drop(columns=['Label'])  # Kolom fitur
@@ -285,10 +285,10 @@ if selected == "Prediksi Audio":
 
 
                 # Load the model and hyperparameters
-                with open('/content/drive/MyDrive/ProyekSaintData/Pertemuan4/gridsearchknnminmaxmodel.pkl', 'rb') as model_file:
+                with open('gridsearchknnminmaxmodel.pkl', 'rb') as model_file:
                     saved_data = pickle.load(model_file)
 
-                df = pd.read_csv('/content/drive/MyDrive/ProyekSaintData/Pertemuan4/Anas_hasil_statistik_pertemuan4.csv')
+                df = pd.read_csv('Anas_hasil_statistik_pertemuan4.csv')
 
                 # Memisahkan kolom target (label) dari kolom fitur
                 X = df.drop(columns=['Label'])  # Kolom fitur
@@ -588,7 +588,7 @@ if selected == "Reduksi Data":
   plt.grid(True)
   plt.xticks(list(range(1, 21)))
 
-  plt.savefig('/content/drive/MyDrive/ProyekSaintData/Pertemuan4/normalisasi_zscore.png')
+  plt.savefig('normalisasi_zscore.png')
 
   st.pyplot(plt)
 
@@ -662,7 +662,7 @@ if selected == "Reduksi Data":
   plt.grid(True)
   plt.xticks(range(0,20))
 
-  plt.savefig('/content/drive/MyDrive/ProyekSaintData/Pertemuan4/normalisasi_minmax.png')
+  plt.savefig('normalisasi_minmax.png')
 
   st.pyplot(plt)
 
@@ -725,6 +725,6 @@ if selected == "Reduksi Data":
   plt.grid(True)
   plt.xticks(range(0,20))
 
-  plt.savefig('/content/drive/MyDrive/ProyekSaintData/Pertemuan4/grid_normalisasi_minmax.png')
+  plt.savefig('grid_normalisasi_minmax.png')
 
   st.pyplot(plt)
