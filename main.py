@@ -174,7 +174,7 @@ if selected == "Prediksi Audio":
                 X_scaled = scaler.fit_transform(X)
 
                 # Memisahkan data menjadi data latih dan data uji
-                X_train, X_test, y_train, y_test = train_test_split(x_scaled, y, test_size=0.2, random_state=42)
+                X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2, random_state=42)
 
                 # Access hyperparameters
                 best_n_neighbors = saved_data['hyperparameters']['best_n_neighbors']
