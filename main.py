@@ -31,7 +31,7 @@ st.write("# Ekstraksi Ciri Audio Untuk Klasifikasi Audio")
 with st.sidebar:
   selected = option_menu(
       menu_title="Main Menu",
-      options=["Dataset", "Normalisasi Data", "Hasil Akurasi", "Reduksi Data","Upload Audio"],
+      options=["Dataset", "Normalisasi Data", "Hasil Akurasi", "Reduksi Data","Prediksi Audio"],
       default_index=0
   )
 
